@@ -2,13 +2,14 @@ const slash = require('slash')
 const path = require('path')
 const program = require('commander')
 const chalk = require('chalk')
-const { directoryExists, fileExists } = require('./common/fs-helpers')
+const { fileExists } = require('./common/fs-helpers')
+const loadConfig = require('./common/load-config')
 
 let verbose = false
 let debug = true
 
 const defaults = {
-  name: 'use-pkg-version',
+  name: require('../package.json').name,
   packageFile: 'package.json',
   commands: ['update', 'info']
 }
@@ -45,8 +46,8 @@ function enrichArgs(args) {
     args && args.packageFile ? args.packageFile : defaults.packageFile
   args.packageFile = slash(path.join(process.cwd(), packageFile))
   if (args && args.file) {
-    const filePath = slash(path.join(process.cwd(), args.file))
-    args.filePath = filePath
+    const updateFile = slash(path.join(process.cwd(), args.file))
+    args.updateFile = updateFile
   }
   debug && console.log('enrichArgs', JSON.stringify(args, null, '\t'))
   return args
@@ -69,6 +70,21 @@ function checkArgs(args) {
   return args
 }
 
+// Merge the args and config, args overrule config options
+function mergeArgsAndConfig(args, config) {
+  const merged = Object.assign({}, config, args)
+  debug &&
+    console.log(
+      'mergeArgsAndConfig\nargs:',
+      JSON.stringify(args, null, '\t'),
+      ',\nconfig:',
+      JSON.stringify(config, null, '\t'),
+      ',\nmerged:',
+      JSON.stringify(merged, null, '\t')
+    )
+  return merged
+}
+
 function cli() {
   program
     .version(require('../package.json').version)
@@ -80,7 +96,7 @@ function cli() {
       'update the version number in the specified file with the version number from the package.json file, the file must be relevant to the current directory'
     )
     .option(
-      '-p, --package-file',
+      '-p, --package-file [filename]',
       'path to the package.json file relevant to the current directory, default ' +
         `'${defaults.packageFile}'`,
       defaults.packageFile
@@ -89,14 +105,32 @@ function cli() {
       '-d, --dry',
       'dry run, only shows which file will be updated but does not actually update anything'
     )
+    .option(
+      '-c, --config',
+      'configuration file that contains the string to search for and replace with'
+    )
+    .option(
+      '-s, --search-for [regex]',
+      'string to search for, can be a regex expression'
+    )
+    .option(
+      '-r, --replace-with [string]',
+      'value to replace with, must contain the {{version}} placeholder for the version number'
+    )
     .option('-v, --verbose', 'show processing information, default false')
     .option('-q, --quiet', 'report errors only, default false')
     .option('-D, --debug', 'show debugging information, default false')
     .action(function(file, options) {
-      debug = options.debug || false
-      verbose = options.verbose || false
+      const config = loadConfig(process.cwd(), defaults.name)
+      debug = options.debug || config.debug || false
+      verbose = options.verbose || config.verbose || false
+      debug && console.log('loadConfig', JSON.stringify(config, null, '\t'))
       const cmd = require(createCmdModule(options))
-      cmd(checkArgs(enrichArgs(cleanArgs(options, file))))
+      cmd(
+        checkArgs(
+          enrichArgs(mergeArgsAndConfig(cleanArgs(options, file), config))
+        )
+      )
     })
 
   program

@@ -80,7 +80,7 @@ describe('update version number in file using version number from package.json f
       const options = {
         updateFile: testFile,
         packageFile: testPackage,
-        findRegex: 'invalid',
+        searchFor: 'invalid',
         replaceWith: 'new-value',
         verbose,
         quiet
@@ -95,7 +95,7 @@ describe('update version number in file using version number from package.json f
       const options = {
         updateFile: testFile,
         packageFile: testPackage,
-        findRegex: 'invalid',
+        searchFor: 'invalid',
         replaceWith: 'new-value',
         placeholder: '>>test<<',
         verbose,
@@ -113,7 +113,7 @@ describe('update version number in file using version number from package.json f
       const options = {
         updateFile: testFile,
         packageFile: testPackage,
-        findRegex: '<strong>.*?</strong>',
+        searchFor: '<strong>.*?</strong>',
         replaceWith: '<strong>{{version}}</strong>',
         verbose,
         quiet
@@ -127,7 +127,7 @@ describe('update version number in file using version number from package.json f
       const options = {
         updateFile: testFile,
         packageFile: testPackage,
-        findRegex: '<straong>.*?</straong>',
+        searchFor: '<straong>.*?</straong>',
         replaceWith: '<strong>{{version}}</strong>',
         verbose,
         quiet
@@ -143,7 +143,7 @@ describe('update version number in file using version number from package.json f
       const options = {
         updateFile: testFile,
         packageFile: testPackage,
-        findRegex: '<strong>.*?</strong>',
+        searchFor: '<strong>.*?</strong>',
         replaceWith: '<strong>{{version}}</strong>',
         verbose,
         quiet: true,

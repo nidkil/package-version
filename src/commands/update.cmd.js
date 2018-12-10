@@ -1,5 +1,5 @@
 const replace = require('replace-in-file')
-const { fileExists } = require('@/common/fs-helpers')
+const { fileExists } = require('../common/fs-helpers')
 const chalk = require('chalk')
 
 const defaults = {
@@ -25,8 +25,8 @@ function validateOptions(options) {
   if (!fileExists(options.packageFile)) {
     throw new Error('File not found: ' + options.packageFile)
   }
-  if (!options.findRegex) {
-    throw new Error('The regex expression to search for must be specified (findRegex)')
+  if (!options.searchFor) {
+    throw new Error('The regex expression to search for must be specified (searchFor)')
   }
   if (!options.replaceWith) {
     throw new Error('The value to replace the found value with not specified (replaceWith)')
@@ -40,18 +40,19 @@ function updateVersion (options) {
   let compiledRegex = null
 
   try {
-    compiledRegex = new RegExp(options.findRegex)
+    compiledRegex = new RegExp(_options.searchFor, 'gm')
   } catch(err) {
     throw new Error('Invalid regex: ' + err.message)
   }
-  if (options.replaceWith.indexOf(_options.placeholder) === -1) {
+
+  if (_options.replaceWith.indexOf(_options.placeholder) === -1) {
     throw new Error(`Version number placeholder '${_options.placeholder}' not specified in 'replaceWith'`)
   }
 
-  verbose = options && options.verbose ? options.verbose : false
-  quiet = options && options.quiet ? options.quiet : false
+  verbose = _options.verbose ? _options.verbose : false
+  quiet = _options.quiet ? _options.quiet : false
 
-  verbose && console.log('options', JSON.stringify(_options, null, '\t'))
+  verbose && console.log('_options', JSON.stringify(_options, null, '\t'))
 
   const pkg = require(_options.packageFile)
 

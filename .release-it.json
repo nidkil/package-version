@@ -1,0 +1,27 @@
+{
+  "dry-run": false,
+  "requireCleanWorkingDir": true,
+  "non-interactive": false,
+  "verbose": false,
+  "pkgFiles": ["package.json"],
+  "disable-metrics": true,
+  "increment": "conventional:angular",
+  "beforeChangelogCommand": "conventional-changelog -p angular -i CHANGELOG.md -s",
+  "changelogCommand": "conventional-changelog -p angular | tail -n +3",
+  "safeBump": false,
+  "buildCommand": "npm run build",
+  "src": {
+    "tagName": "v${version}",
+    "tagAnnotation": "Release v${version}",
+    "beforeStartCommand": "npm run test && npm run lint:error-only"
+  },
+  "github": {
+    "release": true,
+    "releaseName": "🚀 Release ${version}",
+    "tokenRef": "GITHUB_TOKEN"
+  },
+  "npm": {
+    "publish": true,
+    "tag": "latest"
+  }
+}

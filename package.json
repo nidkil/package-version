@@ -20,8 +20,8 @@
   "homepage": "https://github.com/nidkil/use-pkg-version#readme",
   "bin": "./bin/use-pkg-version.js",
   "entry": "./src/use-pkg-version.cli.js",
-  "main": "./src/use-pkg-version.cli.cjs.js",
-  "module": "./src/use-pkg-version.cli.es.js",
+  "main": "./src/use-pkg-version.cli.js",
+  "module": "./dist/use-pkg-version.cli.es.js",
   "browser": "./dist/use-pkg-version.min.js",
   "unpkg": "./dist/use-pkg-version.min.js",
   "files": [
@@ -47,7 +47,7 @@
     "commitlint:last": "commitlint --edit",
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
-    "build": "rm -rf dist && bili --config .bili.config.json",
+    "build": "rm -rf dist && bili --config bili.config.json",
     "release": "nodenv --env .env.local --exec release-it --verbose",
     "release-it": "set DEBUG=octokit:rest*,release-it & release-it --verbose"
   },

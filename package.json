@@ -1,6 +1,6 @@
 {
   "name": "use-pkg-version",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Update any static file with the version number from the package.json file",
   "keywords": [
     "javascript",

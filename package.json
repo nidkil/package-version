@@ -39,6 +39,7 @@
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint -c .eslintrc.js --format codeframe bin src tests",
     "lint:fix": "eslint --fix -c .eslintrc.js --format codeframe bin src tests",
+    "lint:error-only": "eslint -c .eslintrc.js --quiet --format codeframe src tests bin",
     "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "cz:commit": "git cz",
     "cz:retry": "git cz --retry",
@@ -46,7 +47,8 @@
     "commitlint:last": "commitlint --edit",
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
-    "build": "rm -rf dist && bili --config .bili.config.json"
+    "build": "rm -rf dist && bili --config .bili.config.json",
+    "release": "nodenv --env ./.env.local --exec release-it --verbose"
   },
   "engines": {
     "node": ">=6"

@@ -42,8 +42,7 @@ function cleanArgs(cmd, file = null) {
 // All directories and files are relative to the current working directory (cwd), add the cwd to options so that
 // individual commands do not have to handle this themselves
 function enrichArgs(args) {
-  const packageFile =
-    args && args.packageFile ? args.packageFile : defaults.packageFile
+  const packageFile = args && args.packageFile ? args.packageFile : defaults.packageFile
   args.packageFile = slash(path.join(process.cwd(), packageFile))
   if (args && args.file) {
     const updateFile = slash(path.join(process.cwd(), args.file))
@@ -86,9 +85,7 @@ function mergeArgsAndConfig(args, config) {
 }
 
 function cli() {
-  program
-    .version(require('../package.json').version)
-    .usage('<command> [options]')
+  program.version(require('../package.json').version).usage('<command> [options]')
 
   program
     .command('update <file>')
@@ -109,10 +106,7 @@ function cli() {
       '-c, --config',
       'configuration file that contains the string to search for and replace with'
     )
-    .option(
-      '-s, --search-for [regex]',
-      'string to search for, can be a regex expression'
-    )
+    .option('-s, --search-for [regex]', 'string to search for, can be a regex expression')
     .option(
       '-r, --replace-with [string]',
       'value to replace with, must contain the {{version}} placeholder for the version number'
@@ -126,11 +120,7 @@ function cli() {
       verbose = options.verbose || config.verbose || false
       debug && console.log('loadConfig', JSON.stringify(config, null, '\t'))
       const cmd = require(createCmdModule(options))
-      cmd(
-        checkArgs(
-          enrichArgs(mergeArgsAndConfig(cleanArgs(options, file), config))
-        )
-      )
+      cmd(checkArgs(enrichArgs(mergeArgsAndConfig(cleanArgs(options, file), config))))
     })
 
   program

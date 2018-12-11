@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/nidkil/use-pkg-version/compare/v0.1.0...v0.1.1) (2018-12-11)
+
+
+### Bug Fixes
+
+* removed replay_*.log from repo ([2e56314](https://github.com/nidkil/use-pkg-version/commit/2e56314))
+
+
+
 # 0.1.0 (2018-12-11)
 
 

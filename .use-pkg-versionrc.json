@@ -1,0 +1,4 @@
+{
+  "search-for": "<small>.*?</small>",
+  "replace-with": "<small>{{version}}</small>"
+}

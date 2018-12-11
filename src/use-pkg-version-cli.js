@@ -69,9 +69,21 @@ function checkArgs(args) {
   return args
 }
 
+// Change kebab case keys to camelcase keys
+function camelcaseKeys(obj) {
+  Object.keys(obj).forEach(key => {
+    const newKey = camelcase(key)
+    if (newKey !== key) {
+      obj[newKey] = obj[key]
+      delete obj[key]
+    }
+  })
+  return obj
+}
+
 // Merge the args and config, args overrule config options
 function mergeArgsAndConfig(args, config) {
-  const merged = Object.assign({}, config, args)
+  const merged = Object.assign({}, camelcaseKeys(config), args)
   debug &&
     console.log(
       'mergeArgsAndConfig\nargs:',

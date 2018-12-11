@@ -48,8 +48,8 @@
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
     "build": "rm -rf dist && bili --config .bili.config.json",
-    "release": "nodenv --env .env.local --exec release-it --verbose",
-    "release-it": "release-it --verbose"
+    "release": "DEBUG=DEBUG=octokit:rest*,release-it && nodenv --env .env.local --exec release-it --verbose",
+    "release-it": "DEBUG=DEBUG=octokit:rest*,release-it && release-it --verbose"
   },
   "engines": {
     "node": ">=6"

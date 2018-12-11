@@ -1,5 +1,5 @@
 /*!
- * use-pkg-version v0.1.1
+ * use-pkg-version v0.1.2
  * (c) 2018-present nidkil <info@nidkil.com> (https://www.nidkil.com)
  * Released under the MIT License.
  */
@@ -162,7 +162,7 @@ function loadConfig(startDir, moduleName, defaults = {}) {
 var loadConfig_1 = loadConfig;
 
 var name = "use-pkg-version";
-var version = "0.1.1";
+var version = "0.1.2";
 var description = "Update any static file with the version number from the package.json file";
 var keywords = [
 	"javascript",
@@ -210,7 +210,8 @@ var scripts = {
 	"git:first": "git rev-list HEAD | tail -n 1",
 	"git:last": "git rev-list HEAD | head -n 1",
 	build: "rm -rf dist && bili --config .bili.config.json",
-	release: "nodenv --env .env.local --exec release-it --verbose"
+	release: "nodenv --env .env.local --exec release-it --verbose",
+	"release-it": "release-it --verbose"
 };
 var engines = {
 	node: ">=6"

@@ -1,5 +1,5 @@
 /*!
- * use-pkg-version v0.1.2
+ * use-pkg-version v0.1.3
  * (c) 2018-present nidkil <info@nidkil.com> (https://www.nidkil.com)
  * Released under the MIT License.
  */
@@ -162,7 +162,7 @@ function loadConfig(startDir, moduleName, defaults = {}) {
 var loadConfig_1 = loadConfig;
 
 var name = "use-pkg-version";
-var version = "0.1.2";
+var version = "0.1.3";
 var description = "Update any static file with the version number from the package.json file";
 var keywords = [
 	"javascript",
@@ -211,7 +211,7 @@ var scripts = {
 	"git:last": "git rev-list HEAD | head -n 1",
 	build: "rm -rf dist && bili --config .bili.config.json",
 	release: "nodenv --env .env.local --exec release-it --verbose",
-	"release-it": "release-it --verbose"
+	"release-it": "set DEBUG=octokit:rest*,release-it & release-it --verbose"
 };
 var engines = {
 	node: ">=6"
@@ -371,11 +371,24 @@ function checkArgs(args) {
   }
 
   return args;
+} // Change kebab case keys to camelcase keys
+
+
+function camelcaseKeys(obj) {
+  Object.keys(obj).forEach(key => {
+    const newKey = camelcase(key);
+
+    if (newKey !== key) {
+      obj[newKey] = obj[key];
+      delete obj[key];
+    }
+  });
+  return obj;
 } // Merge the args and config, args overrule config options
 
 
 function mergeArgsAndConfig(args, config) {
-  const merged = Object.assign({}, config, args);
+  const merged = Object.assign({}, camelcaseKeys(config), args);
   debug && console.log('mergeArgsAndConfig\nargs:', JSON.stringify(args, null, '\t'), ',\nconfig:', JSON.stringify(config, null, '\t'), ',\nmerged:', JSON.stringify(merged, null, '\t'));
   return merged;
 }

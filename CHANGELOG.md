@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/nidkil/use-pkg-version/compare/v0.1.2...v0.1.3) (2018-12-11)
+
+
+### Bug Fixes
+
+* **cli:** camelcase config file keys ([d5a0352](https://github.com/nidkil/use-pkg-version/commit/d5a0352))
+
+
+
 ## [0.1.2](https://github.com/nidkil/use-pkg-version/compare/v0.1.1...v0.1.2) (2018-12-11)
 
 

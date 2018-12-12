@@ -1,5 +1,10 @@
-node_modules/
-.idea/
+.DS_Store
+node_modules
+dist
+
+# local env files
 .env.local
-package-lock.json
-*.log
+.env.*.local
+
+# Editor directories and files
+.idea

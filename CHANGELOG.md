@@ -1,3 +1,7 @@
+## [0.1.5](https://github.com/nidkil/use-pkg-version/compare/v0.1.4...v0.1.5) (2018-12-12)
+
+
+
 ## [0.1.4](https://github.com/nidkil/use-pkg-version/compare/v0.1.3...v0.1.4) (2018-12-12)
 
 

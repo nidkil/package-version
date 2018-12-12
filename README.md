@@ -56,7 +56,7 @@ Add the following `script` to the `package.json` file:
     "upd-version": "use-pkg-version"
   },
   "devDependencies": {
-    "use-pkg-version": "^0.0.0"
+    "use-pkg-version": "^0.1.5"
   }
 }
 ```

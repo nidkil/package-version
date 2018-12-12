@@ -1,5 +1,5 @@
 /*!
- * use-pkg-version v0.1.4
+ * use-pkg-version v0.1.5
  * (c) 2018-present nidkil <info@nidkil.com> (https://www.nidkil.com)
  * Released under the MIT License.
  */
@@ -7902,7 +7902,7 @@
 	var loadConfig_1 = loadConfig;
 
 	var name = "use-pkg-version";
-	var version = "0.1.4";
+	var version = "0.1.5";
 	var description = "Update any static file with the version number from the package.json file";
 	var keywords = [
 		"javascript",
@@ -7916,9 +7916,7 @@
 		type: "git",
 		url: "git+https://github.com/nidkil/use-pkg-version.git"
 	};
-	var bugs = {
-		url: "https://github.com/nidkil/use-pkg-version/issues"
-	};
+	var bugs = "https://github.com/nidkil/use-pkg-version/issues";
 	var homepage = "https://github.com/nidkil/use-pkg-version#readme";
 	var bin = "./bin/use-pkg-version.js";
 	var entry = "./src/use-pkg-version.cli.js";
@@ -7949,6 +7947,7 @@
 		"commitlint:last": "commitlint --edit",
 		"git:first": "git rev-list HEAD | tail -n 1",
 		"git:last": "git rev-list HEAD | head -n 1",
+		prebuild: "node bin/use-pkg-version update README.md",
 		build: "rm -rf dist && bili --config bili.config.json",
 		release: "nodenv --env .env.local --exec release-it --verbose"
 	};

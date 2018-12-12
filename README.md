@@ -172,6 +172,10 @@ We welcome pull requests! What follows is the simplified version of the contribu
 5. Push to the branch: `git push origin my-new-feature`
 6. Submit a pull request :-)
 
+## Brag about it
+
+Do you find this package useful? Then please brag about it to the world by Twitter, email, blog, Discord, Slack, forums, etc. etc.
+
 ## Author
 
 **nidkil** © [nidkil](https://github.com/nidkil), released under the [MIT](LICENSE.md) license.

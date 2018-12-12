@@ -31,7 +31,7 @@ npm install --global use-pkg-version
 Or install using [yarn](https://yarnpkg.com):
 
 ```bash
-yarn gloabl add use-pkg-version
+yarn global add use-pkg-version
 ```
 
 ### Local
@@ -61,7 +61,7 @@ Add this as a `script` to `package.json`:
 }
 ```
 
-Now you can run `npm run build:upd-version` from the command line. You can pass it arguments using double dashes (--), i.e. `npm run build:upd-version -- info`.
+Now you can run `npm run build:upd-version` from the command line. You can pass it arguments using double dashes (--), e.g. `npm run build:upd-version -- info`.
 
 ## Usage
 
@@ -76,7 +76,7 @@ The easiest way to use this module is adding it as a `prebuild` script in the `p
     "build": "<your-build-command>"
   }
 }
-``` 
+```
 
 You can call this script directly by executing one of the following commands.
 
@@ -94,13 +94,13 @@ yarn prebuild
 
 - **--help** - Using `npm run build:upd-version -- --help` will list the available commands.
 
-- **\<command\> --help** - Using `npm run build:upd-version -- <command> --help` will display information about the specified command and available options.
- 
+- **\<command\> --help** - Using `npm run build:upd-version -- <command> --help` will display information about the specified command and its options.
+
 - **info** - Using `npm run build:upd-version -- info` will display information about your operating system and other environment information that is useful if you need to submit an issue.
 
 ## Roadmap
 
-Currently there is nothing on the roadmap. Any ideas? Please submit an issue.
+Currently there is nothing on the roadmap. Suggestions? Please submit an issue.
 
 ## Contributing
 

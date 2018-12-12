@@ -1,4 +1,4 @@
 {
-  "search-for": "<small>.*?</small>",
-  "replace-with": "<small>{{version}}</small>"
+  "search-for": "\\^[0-9].[0-9].[0-9]",
+  "replace-with": "^{{version}}"
 }

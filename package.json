@@ -14,9 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/nidkil/use-pkg-version.git"
   },
-  "bugs": {
-    "url": "https://github.com/nidkil/use-pkg-version/issues"
-  },
+  "bugs": "https://github.com/nidkil/use-pkg-version/issues",
   "homepage": "https://github.com/nidkil/use-pkg-version#readme",
   "bin": "./bin/use-pkg-version.js",
   "entry": "./src/use-pkg-version.cli.js",
@@ -47,6 +45,7 @@
     "commitlint:last": "commitlint --edit",
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
+    "prebuild": "node bin/use-pkg-version update README.md",
     "build": "rm -rf dist && bili --config bili.config.json",
     "release": "nodenv --env .env.local --exec release-it --verbose"
   },

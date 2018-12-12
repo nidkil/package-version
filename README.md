@@ -18,6 +18,20 @@
 
 Ever had the problem that you have a version number in a static file that needs to be updated when a new version is released? This module is intended for this use case. I use it for example with the `_coverpage.md` of [docsify](https://github.com/docsifyjs/docsify) and the version number in this README.md file.
 
+<!-- toc -->
+
+- [Global](#global)
+- [Local](#local)
+- [Usage](#usage)
+- [Minimum configuration](#minimum-configuration)
+- [Using a configuration file](#using-a-configuration-file)
+- [Other options](#other-options)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [Author](#author)
+
+<!-- tocstop -->
+
 ## Installation
 
 ### Global

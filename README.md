@@ -34,7 +34,7 @@ Ever had the problem that you have a version number in a static file that needs 
 <!-- tocstop -->
 
 </details>
-g
+
 ## Installation
 
 ### Global

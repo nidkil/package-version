@@ -1,5 +1,5 @@
 /*!
- * use-pkg-version v0.1.5
+ * use-pkg-version v0.1.6
  * (c) 2018-present nidkil <info@nidkil.com> (https://www.nidkil.com)
  * Released under the MIT License.
  */
@@ -7902,7 +7902,7 @@
 	var loadConfig_1 = loadConfig;
 
 	var name = "use-pkg-version";
-	var version = "0.1.5";
+	var version = "0.1.6";
 	var description = "Update any static file with the version number from the package.json file";
 	var keywords = [
 		"javascript",
@@ -7947,7 +7947,9 @@
 		"commitlint:last": "commitlint --edit",
 		"git:first": "git rev-list HEAD | tail -n 1",
 		"git:last": "git rev-list HEAD | head -n 1",
-		prebuild: "node bin/use-pkg-version update README.md",
+		"readme:toc": "markdown-toc README.md -i --no-firsth1 --maxdepth=2 --bullets=-",
+		"readme:upd-version": "node bin/use-pkg-version update README.md",
+		prebuild: "npm run readme:toc && npm run readme:upd-version",
 		build: "rm -rf dist && bili --config bili.config.json",
 		release: "nodenv --env .env.local --exec release-it --verbose"
 	};
@@ -7980,6 +7982,7 @@
 		"eslint-plugin-standard": "^4.0.0",
 		husky: "^1.2.0",
 		jest: "^23.6.0",
+		"markdown-toc": "^1.2.0",
 		prettier: "^1.15.3",
 		"release-it": "^8.3.0",
 		"strip-ansi": "^5.0.0"

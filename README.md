@@ -67,7 +67,7 @@ The following entry will be added to the `devDependencies` section in the `packa
 ```json
 {
   "devDependencies": {
-    "use-pkg-version": "^0.1.5"
+    "use-pkg-version": "^0.1.6"
   }
 }
 ```

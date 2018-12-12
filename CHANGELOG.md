@@ -1,6 +1,16 @@
 ## [0.1.7](https://github.com/nidkil/use-pkg-version/compare/v0.1.6...v0.1.7) (2018-12-12)
 
 
+### Bug Fixes
+
+* untracked files ([a42967a](https://github.com/nidkil/use-pkg-version/commit/a42967a))
+* untracked files (again) ([8b46a02](https://github.com/nidkil/use-pkg-version/commit/8b46a02))
+
+
+
+## [0.1.7](https://github.com/nidkil/use-pkg-version/compare/v0.1.6...v0.1.7) (2018-12-12)
+
+
 
 ## [0.1.6](https://github.com/nidkil/use-pkg-version/compare/v0.1.5...v0.1.6) (2018-12-12)
 

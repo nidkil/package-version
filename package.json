@@ -21,7 +21,7 @@
   "bin": "./bin/use-pkg-version.js",
   "entry": "./src/use-pkg-version.cli.js",
   "main": "./src/use-pkg-version.cli.js",
-  "module": "./dist/use-pkg-version.cli.es.js",
+  "module": "./dist/use-pkg-version.es.js",
   "browser": "./dist/use-pkg-version.min.js",
   "unpkg": "./dist/use-pkg-version.min.js",
   "files": [
@@ -38,8 +38,8 @@
     "coverage": "npm run test -- --coverage",
     "coveralls": "npm run coverage && cat ./coverage/lcov.info | coveralls",
     "lint": "eslint -c .eslintrc.js --format codeframe bin src tests",
-    "lint:fix": "eslint --fix -c .eslintrc.js --format codeframe bin src tests",
-    "lint:error-only": "eslint -c .eslintrc.js --quiet --format codeframe src tests bin",
+    "lint:fix": "eslint -c .eslintrc.js --fix --format codeframe bin src tests",
+    "lint:error-only": "eslint -c .eslintrc.js --fix --quiet --format codeframe src tests bin",
     "lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
     "cz:commit": "git cz",
     "cz:retry": "git cz --retry",
@@ -48,8 +48,7 @@
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
     "build": "rm -rf dist && bili --config bili.config.json",
-    "release": "nodenv --env .env.local --exec release-it --verbose",
-    "release-it": "set DEBUG=octokit:rest*,release-it & release-it --verbose"
+    "release": "nodenv --env .env.local --exec release-it --verbose"
   },
   "engines": {
     "node": ">=6"

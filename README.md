@@ -18,20 +18,23 @@
 
 Ever had the problem that you have a version number in a static file that needs to be updated when a new version is released? This module is intended for this use case. I use it for example with the `_coverpage.md` of [docsify](https://github.com/docsifyjs/docsify) and the version number in this README.md file.
 
+<details>
+ <summary><strong>Table of Contents</strong> (click to expand)</summary>
+
 <!-- toc -->
 
-- [Global](#global)
-- [Local](#local)
 - [Usage](#usage)
-- [Minimum configuration](#minimum-configuration)
 - [Using a configuration file](#using-a-configuration-file)
 - [Other options](#other-options)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
+- [Brag about it](#brag-about-it)
 - [Author](#author)
 
 <!-- tocstop -->
 
+</details>
+g
 ## Installation
 
 ### Global
@@ -67,7 +70,7 @@ The following entry will be added to the `devDependencies` section in the `packa
 ```json
 {
   "devDependencies": {
-    "use-pkg-version": "^0.1.6"
+    "use-pkg-version": "^0.1.7"
   }
 }
 ```

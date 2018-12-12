@@ -1,6 +1,6 @@
 {
   "name": "use-pkg-version",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "Update any static file with the version number from the package.json file",
   "keywords": [
     "javascript",
@@ -42,7 +42,7 @@
     "commitlint:last": "commitlint --edit",
     "git:first": "git rev-list HEAD | tail -n 1",
     "git:last": "git rev-list HEAD | head -n 1",
-    "readme:toc": "markdown-toc README.md -i --no-firsth1 --maxdepth=2 --bullets=-",
+    "readme:toc": "markdown-toc README.md -i --no-firsth1 --maxdepth=1 --bullets=-",
     "readme:upd-version": "node bin/use-pkg-version update README.md",
     "prebuild": "npm run readme:toc && npm run readme:upd-version",
     "build": "rm -rf dist && bili --config bili.config.json",

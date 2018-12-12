@@ -93,7 +93,7 @@ Now you can run `npm run build:upd-version` from the command line. You can pass 
 
 The easiest way to use this module is adding it as a `prebuild` script in the `package.json` file. The following example demonstrates how to run `use-pkg-version` when before the build process starts. It uses sane defaults, if no `package.json` file is specified it assumes the `package.json` is in the current directory.
 
-```json
+```
 {
   "scripts": {
     "prebuild": "use-pkg-version update --search-for "^[0-9].[0-9].[0-9]" --replace-with "^{{version}}" README.md",
@@ -177,7 +177,7 @@ We welcome pull requests! What follows is the simplified version of the contribu
 
 ## Brag about it
 
-Do you find this package useful? Then please brag about it to the world by Twitter, email, blog, Discord, Slack, forums, etc. etc.
+Do you find this package useful? Then please brag about it to the world by Twitter, email, blog, Discord, Slack, forums, etc. etc. Thx!
 
 ## Author
 

@@ -11,6 +11,7 @@
   "safeBump": false,
   "buildCommand": "npm run build",
   "src": {
+    "commitMessage": "chore: release ${version}",
     "tagName": "v${version}",
     "tagAnnotation": "Release v${version}",
     "beforeStartCommand": "npm run test && npm run lint:error-only"

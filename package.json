@@ -23,13 +23,10 @@
   "browser": "./dist/use-pkg-version.min.js",
   "unpkg": "./dist/use-pkg-version.min.js",
   "files": [
-    "LICENSE.md",
-    "README.md",
     "bin",
     "dist",
     "src",
-    "*.js",
-    "*.json"
+    "*.md"
   ],
   "scripts": {
     "test": "DEBUG=stdout-stderr & jest",

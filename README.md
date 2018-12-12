@@ -16,7 +16,7 @@
 
 > Update any static file with the version number from the package.json file.
 
-Ever had the problem that you have a version number in a static file that needs to be updated when a new version is released? This module is intended for this usecase.
+Ever had the problem that you have a version number in a static file that needs to be updated when a new version is released? This module is intended for this use case. I use it for example with the `_coverpage.md` of [docsify](https://github.com/docsifyjs/docsify) and the version number in this README.md file.
 
 ## Installation
 
@@ -48,12 +48,12 @@ Or install using [yarn](https://yarnpkg.com):
 yarn add --dev use-pkg-version
 ```
 
-Add this as a `script` to `package.json`:
+Add the following `script` to the `package.json` file:
 
 ```json
 {
   "scripts": {
-    "build:upd-version": "use-pkg-version"
+    "upd-version": "use-pkg-version"
   },
   "devDependencies": {
     "use-pkg-version": "^0.0.0"
@@ -72,23 +72,47 @@ The easiest way to use this module is adding it as a `prebuild` script in the `p
 ```json
 {
   "scripts": {
-    "prebuild": "npm run build:upd-version -- <file-to-update>",
+    "prebuild": "use-pkg-version update --search-for "\^[0-9].[0-9].[0-9]" --replace-with "^{{version}}" README.md",
     "build": "<your-build-command>"
   }
 }
 ```
 
-You can call this script directly by executing one of the following commands.
+You can call this script directly by executing `npm run prebuild` or `yarn prebuild`.
 
-```bash
-npm run prebuild
+## Using a configuration file
+
+You can also use a configuration file instead of passing options as commandline arguments. Change the `script` to the following.
+
+```json
+{
+  "scripts": {
+    "prebuild": "use-pkg-version update README.md",
+    "build": "<your-build-command>"
+  }
+}
 ```
 
-Or:
+Create a `.use-pkg-versionrc.json` file with the following contents.
 
-```bash
-yarn prebuild
+```json
+{
+  "search-for": "\\^[0-9].[0-9].[0-9]",
+  "replace-with": "^{{version}}"
+}
 ```
+
+The configuration can be a configuration object specified in one of the following ways. Files must be located in the root directory of the project. The first match is used, the order is the order the configuration will be looked for.
+
+1. A `use-pkg-version` property in the `package.json` file
+2. A `.use-pkg-versionrc` file with JSON or YAML syntax
+3. A `.use-pkg-versionrc.json` file
+4. A `.use-pkg-versionrc.yaml`, `.use-pkg-versionrc.yml` or `.use-pkg-versionrc.js` file
+5. A `.use-pkg-versionrc.config.js` file
+
+> **IMPORTANT** Commandline options overrule settings in configuration objects.
+
+If the configuration file has a name that does not match the above, then you can use the `-c <config-filename> to specify it.
 
 ## Other options
 

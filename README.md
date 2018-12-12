@@ -4,6 +4,7 @@
 <p align="center" style="font-size: 1.5em"><b>use-pkg-version</b></p>
 <p align="center" style="font-size: 0.5em">Update any static file with the version number from the package.json file</p>
 
+[![Build Status](https://travis-ci.org/nidkil/use-pkg-version.svg?branch=master)](https://travis-ci.org/nidkil/use-pkg-version)
 [![NPM version](https://img.shields.io/npm/v/use-pkg-version.svg)](https://www.npmjs.com/package/use-pkg-version)
 [![Vue 2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 [![Vue CLI 3](https://img.shields.io/badge/vue%20cli-3-brightgreen.svg)](https://cli.vuejs.org/)

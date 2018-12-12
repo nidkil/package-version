@@ -48,15 +48,22 @@ Or install using [yarn](https://yarnpkg.com):
 yarn add --dev use-pkg-version
 ```
 
-Add the following `script` to the `package.json` file:
+The following entry will be added to the `devDependencies` section in the `package.json` file.
+
+```json
+{
+  "devDependencies": {
+    "use-pkg-version": "^0.1.5"
+  }
+}
+```
+
+Add the following entry to the `scripts` section in the `package.json` file:
 
 ```json
 {
   "scripts": {
     "upd-version": "use-pkg-version"
-  },
-  "devDependencies": {
-    "use-pkg-version": "^0.1.5"
   }
 }
 ```
@@ -72,7 +79,7 @@ The easiest way to use this module is adding it as a `prebuild` script in the `p
 ```json
 {
   "scripts": {
-    "prebuild": "use-pkg-version update --search-for "\^[0-9].[0-9].[0-9]" --replace-with "^{{version}}" README.md",
+    "prebuild": "use-pkg-version update --search-for "^[0-9].[0-9].[0-9]" --replace-with "^{{version}}" README.md",
     "build": "<your-build-command>"
   }
 }
@@ -93,7 +100,7 @@ You can also use a configuration file instead of passing options as commandline 
 }
 ```
 
-Create a `.use-pkg-versionrc.json` file with the following contents.
+Create a `.use-pkg-versionrc.json` file with the following configuration object.
 
 ```json
 {
@@ -102,25 +109,39 @@ Create a `.use-pkg-versionrc.json` file with the following contents.
 }
 ```
 
-The configuration can be a configuration object specified in one of the following ways. Files must be located in the root directory of the project. The first match is used, the order is the order the configuration will be looked for.
+> **IMPORTANT** Commandline options overrule settings in the configuration object.
 
-1. A `use-pkg-version` property in the `package.json` file
+The configuration can be a configuration object specified in one of the following ways.
+
+1. A `use-pkg-version` section to the `package.json` file
+
+  ```json
+  {
+    "use-pkg-version": {
+      "search-for": "\\^[0-9].[0-9].[0-9]",
+      "replace-with": "^{{version}}"
+    }
+  }
+  ```
+
 2. A `.use-pkg-versionrc` file with JSON or YAML syntax
 3. A `.use-pkg-versionrc.json` file
 4. A `.use-pkg-versionrc.yaml`, `.use-pkg-versionrc.yml` or `.use-pkg-versionrc.js` file
 5. A `.use-pkg-versionrc.config.js` file
 
-> **IMPORTANT** Commandline options overrule settings in configuration objects.
+Files must be located in the root directory of the project. The order specified is the order the configuration will be looked for, the first match is used.
 
 If the configuration file has a name that does not match the above, then you can use the `-c <config-filename> to specify it.
 
+The names of the configuration object properties are the same as the commandline options.
+
 ## Other options
 
-- **--help** - Using `npm run build:upd-version -- --help` will list the available commands.
+- **--help**: Using `npm run build:upd-version -- --help` will list the available commands.
 
-- **\<command\> --help** - Using `npm run build:upd-version -- <command> --help` will display information about the specified command and its options.
+- **\<command\> --help**: Using `npm run build:upd-version -- <command> --help` will display information about the specified command and its options.
 
-- **info** - Using `npm run build:upd-version -- info` will display information about your operating system and other environment information that is useful if you need to submit an issue.
+- **info**: Using `npm run build:upd-version -- info` will display information about your operating system and other environment information that is useful if you need to submit an issue.
 
 ## Roadmap
 

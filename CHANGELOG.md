@@ -1,3 +1,12 @@
+## [0.1.4](https://github.com/nidkil/use-pkg-version/compare/v0.1.3...v0.1.4) (2018-12-12)
+
+
+### Bug Fixes
+
+* module corrected ([dd9e936](https://github.com/nidkil/use-pkg-version/commit/dd9e936))
+
+
+
 ## [0.1.3](https://github.com/nidkil/use-pkg-version/compare/v0.1.2...v0.1.3) (2018-12-11)
 
 

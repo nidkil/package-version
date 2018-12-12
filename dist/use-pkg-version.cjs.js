@@ -1,5 +1,5 @@
 /*!
- * use-pkg-version v0.1.3
+ * use-pkg-version v0.1.4
  * (c) 2018-present nidkil <info@nidkil.com> (https://www.nidkil.com)
  * Released under the MIT License.
  */
@@ -166,7 +166,7 @@ function loadConfig(startDir, moduleName, defaults = {}) {
 var loadConfig_1 = loadConfig;
 
 var name = "use-pkg-version";
-var version = "0.1.3";
+var version = "0.1.4";
 var description = "Update any static file with the version number from the package.json file";
 var keywords = [
 	"javascript",
@@ -186,8 +186,8 @@ var bugs = {
 var homepage = "https://github.com/nidkil/use-pkg-version#readme";
 var bin = "./bin/use-pkg-version.js";
 var entry = "./src/use-pkg-version.cli.js";
-var main = "./src/use-pkg-version.cli.cjs.js";
-var module$1 = "./src/use-pkg-version.cli.es.js";
+var main = "./src/use-pkg-version.cli.js";
+var module$1 = "./dist/use-pkg-version.es.js";
 var browser = "./dist/use-pkg-version.min.js";
 var unpkg = "./dist/use-pkg-version.min.js";
 var files = [
@@ -204,8 +204,8 @@ var scripts = {
 	coverage: "npm run test -- --coverage",
 	coveralls: "npm run coverage && cat ./coverage/lcov.info | coveralls",
 	lint: "eslint -c .eslintrc.js --format codeframe bin src tests",
-	"lint:fix": "eslint --fix -c .eslintrc.js --format codeframe bin src tests",
-	"lint:error-only": "eslint -c .eslintrc.js --quiet --format codeframe src tests bin",
+	"lint:fix": "eslint -c .eslintrc.js --fix --format codeframe bin src tests",
+	"lint:error-only": "eslint -c .eslintrc.js --fix --quiet --format codeframe src tests bin",
 	"lint:check": "eslint --print-config .eslintrc.js | eslint-config-prettier-check",
 	"cz:commit": "git cz",
 	"cz:retry": "git cz --retry",
@@ -213,9 +213,8 @@ var scripts = {
 	"commitlint:last": "commitlint --edit",
 	"git:first": "git rev-list HEAD | tail -n 1",
 	"git:last": "git rev-list HEAD | head -n 1",
-	build: "rm -rf dist && bili --config .bili.config.json",
-	release: "nodenv --env .env.local --exec release-it --verbose",
-	"release-it": "set DEBUG=octokit:rest*,release-it & release-it --verbose"
+	build: "rm -rf dist && bili --config bili.config.json",
+	release: "nodenv --env .env.local --exec release-it --verbose"
 };
 var engines = {
 	node: ">=6"

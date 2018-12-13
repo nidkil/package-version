@@ -4,7 +4,7 @@ const program = require('commander')
 const chalk = require('chalk')
 const { fileExists } = require('./common/fs-helpers')
 const loadConfig = require('./common/load-config')
-const { camelCase } = require('@/common/helpers')
+const { camelCase } = require('./common/helpers')
 
 let verbose = false
 let debug = true

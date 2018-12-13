@@ -1,3 +1,12 @@
+## [0.1.8](https://github.com/nidkil/use-pkg-version/compare/v0.1.7...v0.1.8) (2018-12-13)
+
+
+### Bug Fixes
+
+* **release-it:** removed alias from require ([3b2fff5](https://github.com/nidkil/use-pkg-version/commit/3b2fff5))
+
+
+
 ## [0.1.7](https://github.com/nidkil/use-pkg-version/compare/v0.1.6...v0.1.7) (2018-12-12)
 
 

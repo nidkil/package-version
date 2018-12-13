@@ -29,7 +29,7 @@ Ever had the problem that you have a version number in a static file that needs 
 - [Other options](#other-options)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [Brag about it](#brag-about-it)
+- [Support & brag about us](#support--brag-about-us)
 - [Author](#author)
 
 <!-- tocstop -->
@@ -71,7 +71,7 @@ The following entry will be added to the `devDependencies` section in the `packa
 ```json
 {
   "devDependencies": {
-    "use-pkg-version": "^0.1.7"
+    "use-pkg-version": "^0.1.8"
   }
 }
 ```

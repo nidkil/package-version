@@ -1,6 +1,5 @@
 {
   "increment": "conventional:angular",
-  "safeBump": false,
   "scripts" : {
     "beforeStart": "npm run test && npm run lint:error-only",
     "afterBump": "conventional-changelog -p angular -i CHANGELOG.md -s",
@@ -12,13 +11,13 @@
     "tagName": "v${version}",
     "tagAnnotation": "Release v${version}"
   },
+  "npm": {
+    "publish": true,
+    "tag": "latest"
+  },
   "github": {
     "release": true,
     "releaseName": "🚀 Release ${version}",
     "tokenRef": "GITHUB_TOKEN"
-  },
-  "npm": {
-    "publish": true,
-    "tag": "latest"
   }
 }

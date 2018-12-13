@@ -46,7 +46,7 @@
     "readme:upd-version": "node bin/use-pkg-version update README.md",
     "prebuild": "npm run readme:toc && npm run readme:upd-version",
     "build": "rm -rf dist && bili --config bili.config.json",
-    "release": "nodenv --env .env.local --exec release-it --disable-metrics"
+    "release": "nodenv --env .env.local --exec release-it --disable-metrics --verbose"
   },
   "engines": {
     "node": ">=6"

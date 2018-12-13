@@ -5,6 +5,7 @@
 <p align="center" style="font-size: 0.5em">Update any static file with the version number from the package.json file</p>
 
 [![Build Status](https://travis-ci.org/nidkil/use-pkg-version.svg?branch=master)](https://travis-ci.org/nidkil/use-pkg-version)
+[![Greenkeeper badge](https://badges.greenkeeper.io/nidkil/use-pkg-version.svg)](https://greenkeeper.io/)
 [![NPM version](https://img.shields.io/npm/v/use-pkg-version.svg)](https://www.npmjs.com/package/use-pkg-version)
 [![Vue 2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
 [![Vue CLI 3](https://img.shields.io/badge/vue%20cli-3-brightgreen.svg)](https://cli.vuejs.org/)
@@ -13,7 +14,7 @@
 [![Dependency status](https://david-dm.org/alanshaw/david.svg)](https://david-dm.org/alanshaw/david)
 [![devDependency status](https://david-dm.org/alanshaw/david/dev-status.svg)](https://david-dm.org/alanshaw/david?type=dev)
 [![Hit count](http://hits.dwyl.com/nidkil/vue-test-plugin.svg)](http://hits.dwyl.com/dwyl/start-here)
-[![License MIT](https://img.shields.io/badge/license-mit-yellow.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/nidkil/use-pkg-version.svg)](https://greenkeeper.io/)
+[![License MIT](https://img.shields.io/badge/license-mit-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Update any static file with the version number from the package.json file.
 

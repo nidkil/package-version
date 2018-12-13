@@ -1,20 +1,16 @@
 {
-  "dry-run": false,
-  "requireCleanWorkingDir": false,
-  "non-interactive": false,
-  "verbose": false,
-  "pkgFiles": ["package.json"],
-  "disable-metrics": true,
   "increment": "conventional:angular",
-  "beforeChangelogCommand": "conventional-changelog -p angular -i CHANGELOG.md -s",
-  "changelogCommand": "conventional-changelog -p angular | tail -n +3",
   "safeBump": false,
-  "buildCommand": "npm run build",
-  "src": {
+  "scripts" : {
+    "beforeStart": "npm run test && npm run lint:error-only",
+    "afterBump": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "beforeStage": "npm run build",
+    "changelog": "conventional-changelog -p angular | tail -n +3"
+  },
+  "git" : {
     "commitMessage": "chore: release ${version}",
     "tagName": "v${version}",
-    "tagAnnotation": "Release v${version}",
-    "beforeStartCommand": "npm run test && npm run lint:error-only"
+    "tagAnnotation": "Release v${version}"
   },
   "github": {
     "release": true,

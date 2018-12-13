@@ -13,7 +13,7 @@
 [![Dependency status](https://david-dm.org/alanshaw/david.svg)](https://david-dm.org/alanshaw/david)
 [![devDependency status](https://david-dm.org/alanshaw/david/dev-status.svg)](https://david-dm.org/alanshaw/david?type=dev)
 [![Hit count](http://hits.dwyl.com/nidkil/vue-test-plugin.svg)](http://hits.dwyl.com/dwyl/start-here)
-[![License MIT](https://img.shields.io/badge/license-mit-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License MIT](https://img.shields.io/badge/license-mit-yellow.svg)](https://opensource.org/licenses/MIT) [![Greenkeeper badge](https://badges.greenkeeper.io/nidkil/use-pkg-version.svg)](https://greenkeeper.io/)
 
 > Update any static file with the version number from the package.json file.
 

@@ -11,8 +11,6 @@
 [![Vue CLI 3](https://img.shields.io/badge/vue%20cli-3-brightgreen.svg)](https://cli.vuejs.org/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/nidkil/use-pkg-version#readme)
-[![Dependency status](https://david-dm.org/alanshaw/david.svg)](https://david-dm.org/alanshaw/david)
-[![devDependency status](https://david-dm.org/alanshaw/david/dev-status.svg)](https://david-dm.org/alanshaw/david?type=dev)
 [![Hit count](http://hits.dwyl.com/nidkil/vue-test-plugin.svg)](http://hits.dwyl.com/dwyl/start-here)
 [![License MIT](https://img.shields.io/badge/license-mit-yellow.svg)](https://opensource.org/licenses/MIT)
 

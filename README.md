@@ -24,6 +24,7 @@ Ever had the problem that you have a version number in a static file that needs 
 
 <!-- toc -->
 
+- [Installation](#installation)
 - [Usage](#usage)
 - [Using a configuration file](#using-a-configuration-file)
 - [Other options](#other-options)

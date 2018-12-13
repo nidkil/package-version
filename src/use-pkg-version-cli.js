@@ -4,6 +4,7 @@ const program = require('commander')
 const chalk = require('chalk')
 const { fileExists } = require('./common/fs-helpers')
 const loadConfig = require('./common/load-config')
+const { camelCase } = require('@/common/helpers')
 
 let verbose = false
 let debug = true
@@ -18,10 +19,6 @@ function createCmdModule(cmd) {
   return `./commands/${cmd._name}.cmd`
 }
 
-function camelcase(str) {
-  return str.replace(/-(\w)/g, (_, c) => (c ? c.toUpperCase() : ''))
-}
-
 // Commander passes the Command object itself as options, extract only actual options into a fresh object,
 // camelcase them and remove leading dashes
 function cleanArgs(cmd, file = null) {
@@ -30,7 +27,7 @@ function cleanArgs(cmd, file = null) {
     file
   }
   cmd.options.forEach(opt => {
-    const key = camelcase(opt.long.replace(/^--/, ''))
+    const key = camelCase(opt.long.replace(/^--/, ''))
     // If an option is not present and Command has a method with the same name it should not be copied
     if (typeof cmd[key] !== 'function' && typeof cmd[key] !== 'undefined') {
       args[key] = cmd[key]
@@ -72,7 +69,7 @@ function checkArgs(args) {
 // Change kebab case keys to camelcase keys
 function camelcaseKeys(obj) {
   Object.keys(obj).forEach(key => {
-    const newKey = camelcase(key)
+    const newKey = camelCase(key)
     if (newKey !== key) {
       obj[newKey] = obj[key]
       delete obj[key]

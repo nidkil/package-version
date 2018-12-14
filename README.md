@@ -5,6 +5,7 @@
 <p align="center" style="font-size: 0.5em">Update any static file with the version number from the package.json file</p>
 
 [![Build Status](https://travis-ci.org/nidkil/use-pkg-version.svg?branch=master)](https://travis-ci.org/nidkil/use-pkg-version)
+[![Coverage Status](https://coveralls.io/repos/github/nidkil/use-pkg-version/badge.svg)](https://coveralls.io/github/nidkil/use-pkg-version)
 [![Greenkeeper badge](https://badges.greenkeeper.io/nidkil/use-pkg-version.svg)](https://greenkeeper.io/)
 [![NPM version](https://img.shields.io/npm/v/use-pkg-version.svg)](https://www.npmjs.com/package/use-pkg-version)
 [![Vue 2](https://img.shields.io/badge/vue-2.x-brightgreen.svg)](https://vuejs.org/)
@@ -18,8 +19,8 @@
 
 Ever had the problem that you have a version number in a static file that needs to be updated when a new version is released? This module is intended for this use case. I use it for example with the `_coverpage.md` of [docsify](https://github.com/docsifyjs/docsify) and the version number in this README.md file.
 
-<details>
- <summary><strong>Table of Contents</strong> (click to expand)</summary>
+<a name="toc">
+  <strong>Table of Contents</strong>
 
 <!-- toc -->
 
@@ -34,7 +35,7 @@ Ever had the problem that you have a version number in a static file that needs 
 
 <!-- tocstop -->
 
-</details>
+</a>
 
 ## Installation
 
@@ -88,6 +89,8 @@ Add the following entry to the `scripts` section in the `package.json` file:
 
 Now you can run `npm run build:upd-version` from the command line. You can pass it arguments using double dashes (--), e.g. `npm run build:upd-version -- info`.
 
+[Go to Table of Contents](#toc)
+
 ## Usage
 
 ### Minimum configuration
@@ -104,6 +107,8 @@ The easiest way to use this module is adding it as a `prebuild` script in the `p
 ```
 
 You can call this script directly by executing `npm run prebuild` or `yarn prebuild`.
+
+[Go to Table of Contents](#toc)
 
 ## Using a configuration file
 
@@ -153,6 +158,8 @@ If the configuration file has a name that does not match the above, then you can
 
 The names of the configuration object properties are the same as the commandline options.
 
+[Go to Table of Contents](#toc)
+
 ## Other options
 
 - **--help**: Using `npm run build:upd-version -- --help` will list the available commands.
@@ -161,9 +168,13 @@ The names of the configuration object properties are the same as the commandline
 
 - **info**: Using `npm run build:upd-version -- info` will display information about your operating system and other environment information that is useful if you need to submit an issue.
 
+[Go to Table of Contents](#toc)
+
 ## Roadmap
 
 Currently there is nothing on the roadmap. Suggestions? Please submit an issue.
+
+[Go to Table of Contents](#toc)
 
 ## Contributing
 
@@ -176,11 +187,15 @@ We welcome pull requests! What follows is the simplified version of the contribu
 5. Push to the branch: `git push origin my-new-feature`
 6. Submit a pull request :-)
 
+[Go to Table of Contents](#toc)
+
 ## Support & brag about us
 
 If you like this project, please support us by starring ⭐ [this](https://github.com/nidkil/use-pkg-version) repository. Thx!
 
 Please let the world know about us! Brag about us using Twitter, email, blog, Discord, Slack, forums, etc. etc. Thx!
+
+[Go to Table of Contents](#toc)
 
 ## Author
 

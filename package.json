@@ -26,7 +26,8 @@
     "bin",
     "dist",
     "src",
-    "*.md"
+    "LICENSE.md",
+    "README.md"
   ],
   "scripts": {
     "test": "DEBUG=stdout-stderr & jest",

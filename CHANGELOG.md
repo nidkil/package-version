@@ -1,3 +1,13 @@
+## [0.1.9](https://github.com/nidkil/use-pkg-version/compare/v0.1.8...v0.1.9) (2018-12-16)
+
+
+### Bug Fixes
+
+* changed load sequence bin ([2fc560a](https://github.com/nidkil/use-pkg-version/commit/2fc560a))
+* **cli:** changed option and improved debug output ([ad746d9](https://github.com/nidkil/use-pkg-version/commit/ad746d9))
+
+
+
 ## [0.1.8](https://github.com/nidkil/use-pkg-version/compare/v0.1.7...v0.1.8) (2018-12-13)
 
 

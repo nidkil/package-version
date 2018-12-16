@@ -7,6 +7,8 @@ const defaults = {
   dry: false
 }
 
+// Enable or disable debug output
+let debug = false
 // Enable or disable verbose output
 let verbose = false
 // Enable or disable quiet mode
@@ -49,9 +51,11 @@ function updateVersion (options) {
     throw new Error(`Version number placeholder '${_options.placeholder}' not specified in 'replaceWith'`)
   }
 
+  debug = _options.debug ? _options.debug : false
   verbose = _options.verbose ? _options.verbose : false
   quiet = _options.quiet ? _options.quiet : false
 
+  debug && console.log('compiledRegex =', compiledRegex.toString())
   verbose && console.log('_options', JSON.stringify(_options, null, '\t'))
 
   const pkg = require(_options.packageFile)

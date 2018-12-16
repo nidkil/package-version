@@ -108,7 +108,7 @@ function cli() {
       defaults.packageFile
     )
     .option(
-      '-d, --dry',
+      '-d, --dry-run',
       'dry run, only shows which file will be updated but does not actually update anything'
     )
     .option(

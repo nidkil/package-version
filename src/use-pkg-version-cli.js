@@ -1,3 +1,4 @@
+const pkg = require('../package.json')
 const slash = require('slash')
 const path = require('path')
 const program = require('commander')
@@ -8,9 +9,9 @@ const { camelCase } = require('./common/helpers')
 
 let verbose = false
 let debug = true
+let quiet = false
 
 const defaults = {
-  name: require('../package.json').name,
   packageFile: 'package.json',
   commands: ['update', 'info']
 }
@@ -93,8 +94,40 @@ function mergeArgsAndConfig(args, config) {
   return merged
 }
 
+function handleAction(options, args = null) {
+  const config = loadConfig(process.cwd(), pkg.name)
+  debug = options.debug || config.debug || false
+  verbose = options.verbose || config.verbose || false
+  quiet = options.quiet || config.verbose || false
+  !quiet && console.log(chalk.yellow(pkg.name + ' v' + pkg.version))
+  debug && console.log('loadConfig', JSON.stringify(config, null, '\t'))
+  const cmd = require(createCmdModule(options))
+  cmd(checkArgs(enrichArgs(mergeArgsAndConfig(cleanArgs(options, args), config))))
+}
+
+function handleInfoAction() {
+  console.log(chalk.yellow(pkg.name + ' v' + pkg.version))
+  console.log(chalk.bold('\nEnvironment Info:'))
+  require('envinfo')
+    .run(
+      {
+        System: ['OS', 'CPU'],
+        Binaries: ['Node', 'Yarn', 'npm'],
+        Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
+        npmPackages: '/**/{*vue*,@vue/*/}',
+        npmGlobalPackages: ['@vue/cli']
+      },
+      {
+        showNotFound: true,
+        duplicates: true,
+        fullTree: true
+      }
+    )
+    .then(console.log)
+}
+
 function cli() {
-  program.version(require('../package.json').version).usage('<command> [options]')
+  program.version(pkg.version).usage('<command> [options]')
 
   program
     .command('update <file>')
@@ -124,35 +157,14 @@ function cli() {
     .option('-q, --quiet', 'report errors only, default false')
     .option('-D, --debug', 'show debugging information, default false')
     .action(function(file, options) {
-      const config = loadConfig(process.cwd(), defaults.name)
-      debug = options.debug || config.debug || false
-      verbose = options.verbose || config.verbose || false
-      debug && console.log('loadConfig', JSON.stringify(config, null, '\t'))
-      const cmd = require(createCmdModule(options))
-      cmd(checkArgs(enrichArgs(mergeArgsAndConfig(cleanArgs(options, file), config))))
+      handleAction(options, file)
     })
 
   program
     .command('info')
     .description('print debugging information about your environment')
     .action(cmd => {
-      console.log(chalk.bold('\nEnvironment Info:'))
-      require('envinfo')
-        .run(
-          {
-            System: ['OS', 'CPU'],
-            Binaries: ['Node', 'Yarn', 'npm'],
-            Browsers: ['Chrome', 'Edge', 'Firefox', 'Safari'],
-            npmPackages: '',
-            npmGlobalPackages: []
-          },
-          {
-            showNotFound: true,
-            duplicates: true,
-            fullTree: true
-          }
-        )
-        .then(console.log)
+      handleInfoAction()
     })
 
   // Output help information if command is unknown
@@ -166,9 +178,7 @@ function cli() {
   program.on('--help', function() {
     console.log()
     console.log(
-      `  Run ${chalk.cyan(
-        `${defaults.name} <command> --help`
-      )} for detailed usage of given command.`
+      `  Run ${chalk.cyan(`${pkg.name} <command> --help`)} for detailed usage of given command.`
     )
     console.log()
   })

@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "commander": "^2.19.0",
+    "commander": "^3.0.1",
     "cosmiconfig": "^5.0.7",
     "envinfo": "^6.0.1",
     "replace-in-file": "^3.4.2",

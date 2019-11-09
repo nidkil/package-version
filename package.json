@@ -51,7 +51,7 @@
     "node": ">=6"
   },
   "dependencies": {
-    "chalk": "^2.4.1",
+    "chalk": "^3.0.0",
     "commander": "^2.19.0",
     "cosmiconfig": "^5.0.7",
     "envinfo": "^6.0.1",

@@ -57,7 +57,7 @@
     "envinfo": "^6.0.1",
     "replace-in-file": "^3.4.2",
     "slash": "^2.0.0",
-    "update-notifier": "^2.5.0"
+    "update-notifier": "^4.0.0"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",

@@ -79,7 +79,7 @@
     "jest": "^23.6.0",
     "markdown-toc": "^1.2.0",
     "prettier": "^1.15.3",
-    "release-it": "^9.0.0",
+    "release-it": "^13.3.0",
     "strip-ansi": "^5.0.0"
   },
   "config": {
